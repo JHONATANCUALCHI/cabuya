@@ -14,7 +14,7 @@ const Hero = () => {
           playsInline
           className={styles.video}
         >
-          <source src="/assets/videos/baseCabuya.mp4" type="video/mp4" />
+          <source src="/assets/videos/footerCabuya_01.mp4" type="video/mp4" />
           Tu navegador no soporta el tag de video.
         </video>
       </div>
