@@ -1,0 +1,64 @@
+.section {
+  background-color: white;
+  text-align: center;
+}
+
+.centeredWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoWrapper {
+  margin-bottom: var(--space-8);
+  display: flex;
+  justify-content: center;
+}
+
+.bocetoLogo {
+  width: 120px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.contentWrapper {
+  max-width: 600px;
+  /* Alrededor del 20-30% en pantallas grandes, pero legible */
+  margin: var(--space-8) auto 0;
+}
+
+@media (min-width: 1440px) {
+  .contentWrapper {
+    max-width: 70%;
+    /* Acercándonos al 20% en pantallas muy grandes */
+  }
+}
+
+.paragraph {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-negro-suave);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.quote {
+  margin-top: var(--space-8);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-tinta-cabuya);
+  position: relative;
+  padding: 0 var(--space-4);
+}
+
+.quote::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-cobre-andino);
+  margin: 0 auto var(--space-4);
+}

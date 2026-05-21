@@ -1,0 +1,86 @@
+.section {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.videoSplit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .videoSplit {
+    flex-direction: row;
+  }
+}
+
+.videoWrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: 50vh; /* Cada video ocupa la mitad del alto en móvil */
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .videoWrapper {
+    height: 100%;
+  }
+}
+
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: none;
+  object-fit: cover;
+}
+
+/* Ajustes específicos para IFRAMES (YouTube/Vimeo) para simular object-fit: cover */
+iframe.video {
+  /* En móvil, el contenedor es 100vw x 50vh. El video 16:9 es muy ancho. 
+     Forzamos que el alto sea al menos el 100% del contenedor (50vh) 
+     y el ancho sea proporcional para no dejar huecos. */
+  width: 177.77vh; /* (16/9) * 100, pero relativo al contenedor */
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media (min-width: 1024px) {
+  iframe.video {
+    /* En escritorio, el contenedor es 50vw x 100vh. El video 16:9 es muy alto. */
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    /* Ratio 16:9: Para 100vh de alto, el ancho mínimo debe ser 177.77vh */
+    min-width: 177.77vh; 
+  }
+}
+
+.videoWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  pointer-events: none;
+}

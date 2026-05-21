@@ -1,0 +1,57 @@
+.section {
+  padding: var(--space-16) 0;
+  background-color: var(--color-blanco-lino);
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-cobre-andino) 0%, #8B4513 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: var(--space-24);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  opacity: 0.9;
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+}
+
+.decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 120px;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+  z-index: 1;
+  pointer-events: none;
+}

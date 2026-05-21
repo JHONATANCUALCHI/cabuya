@@ -1,0 +1,122 @@
+.catalog {
+  background-color: var(--color-blanco-lino);
+  overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative;
+  margin-top: var(--space-8);
+  padding: var(--space-4) 0;
+}
+
+.sliderTrack {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 85%;
+  padding: 0 var(--space-3);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.3;
+  transform: scale(0.85);
+  filter: grayscale(1) blur(2px);
+}
+
+@media (min-width: 768px) {
+  .slide {
+    flex: 0 0 60%;
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    flex: 0 0 50%;
+    padding: 0 var(--space-6);
+  }
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: grayscale(0) blur(0);
+  z-index: 2;
+}
+
+.sliderDots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-12);
+}
+
+.sliderDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-tinta-cabuya);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.activeSliderDot {
+  background-color: var(--color-tinta-cabuya);
+  transform: scale(1.3);
+}
+
+.navBtn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: var(--shadow-xl);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.navBtn:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: -24px;
+}
+
+.next {
+  right: -24px;
+}
+
+@media (min-width: 1280px) {
+  .prev { left: -60px; }
+  .next { right: -60px; }
+}
+
+.navBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-12) 0;
+  color: var(--color-gris-niebla);
+}
+
+/* Compensate for the scale(1.05) of activeSlide to prevent overflow clipping */
+.sliderContainer {
+  padding: var(--space-12) 0;
+}

@@ -1,0 +1,80 @@
+.footer {
+  background-color: #000000;
+  color: var(--color-blanco-lino);
+  padding: var(--space-16) 0 var(--space-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+  color: white;
+}
+
+.description {
+  max-width: 320px;
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  margin-bottom: var(--space-6);
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.socials a {
+  opacity: 0.8;
+}
+
+.socials a:hover {
+  opacity: 1;
+}
+
+.colTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-6);
+  color: white;
+}
+
+.linkList, .contactList {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+.linkList li, .contactList li {
+  margin-bottom: var(--space-3);
+}
+
+.linkList a:hover {
+  text-decoration: underline;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-8);
+  text-align: center;
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  opacity: 0.6;
+}

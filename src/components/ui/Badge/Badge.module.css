@@ -1,0 +1,26 @@
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-sisal-natural);
+  color: var(--color-tinta-cabuya);
+}
+
+.new {
+  background-color: var(--color-verde-paramo);
+  color: white;
+}
+
+.popular {
+  background-color: var(--color-oro-inca);
+  color: var(--color-tinta-cabuya);
+}
+
+.limited {
+  background-color: var(--color-cobre-andino);
+  color: white;
+}

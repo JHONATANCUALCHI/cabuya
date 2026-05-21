@@ -1,0 +1,28 @@
+.section {
+  background-color: var(--color-sisal-natural);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* On very small screens, make it a bit more scrollable if needed, 
+   but for now a simple vertical stack is fine as per spec mobile behavior 
+   often uses swipe which can be complex to implement without libs. 
+   I'll stick to a clean grid that stacks on mobile. */
